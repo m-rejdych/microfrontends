@@ -6,6 +6,9 @@ const { dependencies } = require('../package.json');
 
 module.exports = merge(common, {
   mode: 'production',
+  output: {
+    publicPath: '/marketing/latest/',
+  },
   plugins: [
     new ModuleFederationPlugin({
       name: 'marketing',

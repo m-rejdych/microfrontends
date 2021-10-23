@@ -13,7 +13,7 @@ module.exports = merge(common, {
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
-        marketing: `marketing@${process.env.PRODUCTION_DOMAIN}/marketing/remoteEntry.js`,
+        marketing: `marketing@${process.env.PRODUCTION_DOMAIN}/marketing/latest/remoteEntry.js`,
       },
       shared: dependencies,
     }),
