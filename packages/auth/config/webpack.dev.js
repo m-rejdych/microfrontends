@@ -8,17 +8,17 @@ const { dependencies } = require('../package.json');
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
-    port: 3001,
+    port: 3002,
     hot: true,
     historyApiFallback: true,
     contentBase: path.join(__dirname, '..', 'build'),
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'marketing',
+      name: 'auth',
       filename: 'remoteEntry.js',
       exposes: {
-        './MarketingApp': './src/bootstrap.js',
+        './AuthApp': './src/bootstrap.js',
       },
       shared: dependencies,
     }),

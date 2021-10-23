@@ -10,9 +10,7 @@ module.exports = merge(common, {
   devServer: {
     port: 3000,
     hot: true,
-    historyApiFallback: {
-      index: 'index.html',
-    },
+    historyApiFallback: true,
     contentBase: path.join(__dirname, '..', 'build'),
   },
   plugins: [
@@ -20,6 +18,7 @@ module.exports = merge(common, {
       name: 'container',
       remotes: {
         marketing: 'marketing@http://localhost:3001/remoteEntry.js',
+        auth: 'auth@http://localhost:3002/remoteEntry.js',
       },
       shared: dependencies,
     }),
